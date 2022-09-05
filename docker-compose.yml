@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13
+    container_name: job_database
+    ports: 
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - ./job_db/pg:/var/lib/postgresql
+      - ./job_db/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      

@@ -7,16 +7,16 @@ CREATE TABLE IF NOT EXISTS backend_engineer (
     skill TEXT[],
     job_type TEXT,
     loc TEXT,
-    salary TEXT,
+    salary TEXT
 );
 
 CREATE TABLE IF NOT EXISTS data_engineer (
     url_link TEXT NOT NULL,
     company TEXT NOT NULL,
-    skill TEXT[],
+    skill TEXT [],
     job_type TEXT,
     loc TEXT,
-    salary TEXT,
+    salary TEXT
 );
 
 CREATE TABLE IF NOT EXISTS data_scientist (
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS data_scientist (
     skill TEXT[],
     job_type TEXT,
     loc TEXT,
-    salary TEXT,
+    salary TEXT
 );
 
 CREATE TABLE IF NOT EXISTS ml_engineer (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS ml_engineer (
     skill TEXT[],
     job_type TEXT,
     loc TEXT,
-    salary TEXT,
+    salary TEXT
 );
 
 CREATE TABLE IF NOT EXISTS qa_engineer (
@@ -43,5 +43,5 @@ CREATE TABLE IF NOT EXISTS qa_engineer (
     skill TEXT[],
     job_type TEXT,
     loc TEXT,
-    salary TEXT,
+    salary TEXT
 );

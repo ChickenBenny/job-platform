@@ -1,5 +1,10 @@
 version: '3'
 services:
+  backendserver:
+    build: ./backendserver
+    ports:
+      - "8000:8000"
+
   postgres:
     image: postgres:13
     container_name: job_database

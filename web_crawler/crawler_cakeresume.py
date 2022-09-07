@@ -1,11 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from random import randint
+import time
 
 class web_crawler_cake():
     def __init__(self, job_type, crawling_type):
         self.job_type = job_type
         self.crawling_type = crawling_type
+        self.time_sleep = [1, 1, 2, 3, 3, 2, 1, 4, 5, 4]
         
     def get_soup(self, url):
         response = requests.get(url)
@@ -29,13 +32,14 @@ class web_crawler_cake():
 
     def get_url_data(self):
         url_data = []
-        url = f'https://www.cakeresume.com/jobs/categories/it/{self.job_type}?order=latest'
+        url = f'https://www.cakeresume.com/jobs/python?profession%5B0%5D=it_{self.job_type}&order=latest'
         url_data.append(url)
         if self.crawling_type == 'init':
             soup = self.get_soup(url)
             if soup:
                 i = 0
                 while True:
+                    time.sleep(randint(1, 6))
                     if i > 15:
                         break
                     next_page_link = self.find_next_page(soup)
@@ -47,7 +51,6 @@ class web_crawler_cake():
                         url_data.append(next_page_link)
                         soup = self.get_soup(next_page_link)
                         i += 1
-                        # print(f'{i} insert')
         return url_data
 
     def get_search_item(self, soup):
@@ -71,8 +74,10 @@ class web_crawler_cake():
             for tag in tags:
                 if tag.text != '':
                     skill_set.append(tag.text)
-            return skill_set
-        return ""
+        else:
+            skill_set.append('None')
+        return skill_set
+        
 
     def get_feature(self, search_item):
         job_features = search_item.find('div', class_ = re.compile(r'JobSearchItem_features__*'))
@@ -106,14 +111,7 @@ class web_crawler_cake():
                 for search_item in search_items:
                     job_data = self.get_job_data(search_item)
                     data.append(job_data)
-                    # print('success')
+            time.sleep(randint(1, 6))
+
         return data
 
-
-if __name__== '__main__':
-    crawler = web_crawler_cake('data-engineer', 'init')
-    url_datas = crawler.get_url_data()
-    # print(f'url ok {len(url_datas)}')
-    data = crawler.crawl_all_data(url_datas)
-    print(len(data))
-    print(data)

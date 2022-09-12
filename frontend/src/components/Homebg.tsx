@@ -1,17 +1,20 @@
 import Image from 'react-bootstrap/Image'
+import { Container } from "react-bootstrap"
 import taipeiCity from '../images/TaipeiCity.jpg'
 
 export function Homebg(){
-    var textStyle: any = {
-        position: 'absolute',
-        top: '50%',
-        left: '35%',
-        color: "white"
-    };
+
     return (
         <div>
             <Image fluid src={taipeiCity} />
-            <h1 style={textStyle}>Hunting Your Python Job !</h1>
+            <Container>
+                <h1 style={{
+                    position: 'absolute',
+                    top: '45%',
+                    left: '35%',
+                    color: 'white'
+                }}>Hunting Your Python Job !</h1>
+            </Container>
         </div>
     )
 }

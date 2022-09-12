@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from models.init_database import init_crawler
-import psycopg2
-
+from models.get_job_data import get_data
 
 app = FastAPI()
 
@@ -20,21 +19,6 @@ app.add_middleware(
 )
 
 
-def get_data():
-    connection = psycopg2.connect(
-                    database = "postgres",
-                    user = "postgres",
-                    password = "postgres",
-                    host = "job_database",
-                    port = '5432'
-                )
-    cursor = connection.cursor()
-    query = f'SELECT * FROM backend_engineer LIMIT;'
-    cursor.execute(query)
-    rows = cursor.fetchall()
-    cursor.close()
-    return rows
-
 @app.get("/")
 async def home():
     return {"message": "Hello World"}
@@ -48,5 +32,25 @@ def init_db():
 
 @app.get("/backend")
 def backend():
-    data = get_data()
+    data = get_data("backend_engineer")
+    return {"message": data}
+
+@app.get("/dataEngineer")
+def backend():
+    data = get_data("data_engineer")
+    return {"message": data}
+
+@app.get("/dataScientist")
+def backend():
+    data = get_data("data_scientist")
+    return {"message": data}
+
+@app.get("/mlEngineer")
+def backend():
+    data = get_data("ml_engineer")
+    return {"message": data}
+
+@app.get("/qaEngineer")
+def backend():
+    data = get_data("qa_engineer")
     return {"message": data}

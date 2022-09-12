@@ -8,6 +8,13 @@ services:
     volumes:
       - ./backendserver/models:/models
 
+  frontendserver:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "4173:4173"
+    
+
   postgres:
     image: postgres:13
     container_name: job_database

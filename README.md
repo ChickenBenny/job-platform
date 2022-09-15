@@ -1,4 +1,4 @@
-# Job platfrom
+# Job platform
 ### Hunt for your Python Job
 這是一個針對 Python 語言所開發的整合求職平台，整合了Cakeresume和yourator等求職網站，並且每日會去各大求職網站爬取最新的資料，讓你找工作輕鬆自在，不必在各大平台流浪。
 
@@ -21,7 +21,7 @@
 1. Clone the repository
 ```
 $ git clone https://github.com/ChickenBenny/job-platform
-$ cd job-platfrom
+$ cd job-platform
 ```
 2. Use docker-compose up to build the server
 ```

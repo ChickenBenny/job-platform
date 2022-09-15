@@ -12,8 +12,8 @@ export function Navbar() {
                     <Nav.Link href="/mlEngineer">ML-Engineer</Nav.Link>
                     <Nav.Link href="/qaEngineer">QA-Engineer</Nav.Link>
                 </Nav>
-                <Button>
-                    Hire me!
+                <Button variant="primary" href="https://github.com/ChickenBenny/job-platform">
+                    Github Link
                 </Button>
             </Container>
         </NavbarBs>

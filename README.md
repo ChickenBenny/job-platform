@@ -2,7 +2,7 @@
 ### Hunt for your Python Job
 這是一個針對 Python 語言所開發的整合求職平台，整合了Cakeresume和yourator等求職網站，並且每日會去各大求職網站爬取最新的資料，讓你找工作輕鬆自在，不必在各大平台流浪。
 
-**網址 :** http://140.116.82.25:4173/
+**Demo網址 :** http://140.116.82.25:4173/
 
 ### 網站功能
 * 跨平台整合求職資訊
@@ -27,6 +27,12 @@ $ cd job-platform
 ```
 $ docker-compose up --build
 ```
+### 開發手冊（for contribuer)
+- 歡迎所有人來參與開發，若有任何問題歡迎來信或是在 issue 提出
+    - E-mail: zxc123benny14159@gmail.com
+- 開發手冊
+    - https://hackmd.io/@nerohin/python-job-platform
+---
 
 ![](https://i.imgur.com/29V1E2p.png)
 

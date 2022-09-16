@@ -3,10 +3,12 @@ from models.init_models.process_and_insert_cakeresume import preprocessing_caker
 from models.init_models.crawler_yourator import crawler_yourator
 import json
 
+
 def get_information(website):
     with open('/models/crawl_information.json', 'r') as fp:
         information = json.load(fp)[website]
         return information
+
 
 class init_crawler():
     def __init__(self):
@@ -18,7 +20,7 @@ class init_crawler():
         for key in self.cakeresume.keys():
             job_type = self.cakeresume[key]
             type = 'init'
-            
+
             web_crawler = web_crawler_cake(job_type, type)
             url_data = web_crawler.get_url_data()
             data = web_crawler.crawl_all_data(url_data)

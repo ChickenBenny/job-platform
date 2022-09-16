@@ -2,7 +2,7 @@ import Image from 'react-bootstrap/Image'
 import { Container } from "react-bootstrap"
 import taipeiCity from '../images/TaipeiCity.jpg'
 
-export function Homebg(){
+export function Homebg() {
 
     return (
         <div>

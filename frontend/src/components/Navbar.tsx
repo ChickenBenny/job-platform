@@ -1,6 +1,6 @@
-import { Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
+import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 
-export function Navbar() { 
+export function Navbar() {
     return (
         <NavbarBs bg="dark" variant="dark" expand="lg">
             <Container>

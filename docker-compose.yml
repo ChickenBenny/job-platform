@@ -1,18 +1,18 @@
 version: '3'
 services:
-  backendserver:
+  backend:
     container_name: backend
     build: ./backendserver
     ports:
-      - "8000:8000"
+      - "${BACKEND_IP}:8000"
     volumes:
       - ./backendserver/models:/models
 
-  frontendserver:
+  frontend:
     container_name: frontend
     build: ./frontend
     ports:
-      - "4173:4173"
+      - "${FRONTEND_IP}:4173"
     
 
   postgres:
@@ -30,9 +30,13 @@ services:
     container_name: nginx
     image: nginx:latest
     ports: 
-      - 80:80
+      - "${NGINX_IP_HTTP}:80"
+      - "${NGINX_IP_HTTPS}:443"
     restart: always
     volumes:
       - ./nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/certs:/etc/letsencrypt
+      - ./certbot/letsencrypt:/letsencrypt
     depends_on:
       - frontend
+  

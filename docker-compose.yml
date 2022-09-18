@@ -39,4 +39,5 @@ services:
       - ./certbot/letsencrypt:/letsencrypt
     depends_on:
       - frontend
+      # - backend
   

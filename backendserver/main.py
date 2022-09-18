@@ -20,12 +20,12 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/api")
 async def home():
     return {"message": "Hello World"}
 
 
-@app.get("/init")
+@app.get("/api/init")
 def init_db():
     init = init_crawler()
     init.init_database()
@@ -33,7 +33,7 @@ def init_db():
     return {"message": "init_ok!"}
 
 
-@app.get('/daily')
+@app.get('/api/daily')
 def daily():
     daily = daily_crawler()
     daily.crawl_daily()
@@ -41,31 +41,31 @@ def daily():
     return {"message": "daily_ok"}
 
 
-@app.get("/backend")
+@app.get("/api/backend")
 def backend():
     data = get_data("backend_engineer")
     return {"message": data}
 
 
-@app.get("/dataEngineer")
+@app.get("/api/dataEngineer")
 def backend():
     data = get_data("data_engineer")
     return {"message": data}
 
 
-@app.get("/dataScientist")
+@app.get("/api/dataScientist")
 def backend():
     data = get_data("data_scientist")
     return {"message": data}
 
 
-@app.get("/mlEngineer")
+@app.get("/api/mlEngineer")
 def backend():
     data = get_data("ml_engineer")
     return {"message": data}
 
 
-@app.get("/qaEngineer")
+@app.get("/api/qaEngineer")
 def backend():
     data = get_data("qa_engineer")
     return {"message": data}

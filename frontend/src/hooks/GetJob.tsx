@@ -8,7 +8,7 @@ export function GetJob(type: string){
             const headers = { 
                 'Content-Type': 'application/json',
             };
-            const response = await fetch(`https://chickenbenny.com/api/${type}`, {
+            const response = await fetch(`http://127.0.0.1/api/${type}`, {
                 headers: headers,
                 method: 'GET'
             });

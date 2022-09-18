@@ -28,8 +28,7 @@
 $ git clone https://github.com/ChickenBenny/job-platform
 $ cd job-platform
 ```
-2. export the ip in .env file .
-4. Use docker-compose up to build the server
+2. Use docker-compose up to build the server
 ```
 $ docker-compose up --build
 ```

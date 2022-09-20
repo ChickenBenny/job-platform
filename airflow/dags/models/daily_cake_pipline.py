@@ -1,13 +1,10 @@
-from datetime import datetime, timedelta
 from airflow.decorators import dag, task
-from airflow.providers.postgres.hooks.postgres import PostgresHook
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
 from models.cakeresume_get_job_data import get_job_data
-
-POSTGRES_CONN_ID = 'job_database'
+from models.insert_into_db import insert_into_db
 
 def daily_job_cakeresume(type, table):
     
@@ -34,29 +31,8 @@ def daily_job_cakeresume(type, table):
         return {'content': df.to_json()}
 
     @task
-    def insert_into_db(processed_data):
-        processed_data = pd.read_json(processed_data['content'])
-        hook = PostgresHook.get_hook(POSTGRES_CONN_ID)
-        connection = hook.get_conn()
-        cursor = connection.cursor()
-        dt = datetime.now().strftime("%Y%m%d")
-        for i in range(processed_data.shape[0]):
-            try:
-                query = f'''INSERT INTO {table}(url_link, title, company, skill, job_type, loc, salary, dt) \
-                            VALUES(%s, %s, %s, %s, %s, %s, %s, %s);'''
-                data = (processed_data.iloc[i, 0], processed_data.iloc[i, 1], processed_data.iloc[i, 2], processed_data.iloc[i, 3],
-                        processed_data.iloc[i, 4], processed_data.iloc[i, 5], processed_data.iloc[i, 6], dt)
-                cursor.execute(query, data)
-                connection.commit()
-                print('success')
-            except:
-                cursor.close()
-                connection.close()
-                connection = hook.get_conn()
-                cursor = connection.cursor()
-                print('fail')
-        cursor = connection.cursor()
-        print('daily work success')
+    def insert_data(processed_data):
+        insert_into_db(processed_data, table)
         return {'status': 'daily_success'}
 
-    insert_into_db(process_data(get_soup()))
+    insert_data(process_data(get_soup()))

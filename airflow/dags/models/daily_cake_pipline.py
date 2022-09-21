@@ -33,6 +33,5 @@ def daily_job_cakeresume(type, table):
     @task
     def insert_data(processed_data):
         insert_into_db(processed_data, table)
-        return {'status': 'daily_success'}
 
     insert_data(process_data(get_soup()))

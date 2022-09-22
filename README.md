@@ -6,16 +6,16 @@
 
 ### 網站功能
 * 跨平台整合求職資訊
-* 每日爬取最新的的職缺資訊
+* 建立爬蟲pipline，每日定期爬取資料
 * 點擊職缺公司名稱能轉跳到原始的求職網站刊登資訊
 
 ### 幫忙點個讚~
 目前此網站是架在我實驗室的電腦上，網站十分的陽春。若大家喜歡可以幫我點個星星，我會持續更新網站功能，並美化網站頁面。
 
 ### 目前在著手的部分
-* 後端重構
 * 新增104網站爬蟲api
-* 前端重構 + 優化
+* 創建Discrod推播系統
+* 前端介面優化
 
 ### 未來想發展的功能
 * 利用 ML 去預測職缺的薪水，並分析職缺薪水走勢
@@ -32,6 +32,12 @@ $ cd job-platform
 ```
 $ docker-compose up --build
 ```
+3. build the airflow server
+```
+$ cd airflow
+$ docker-compose up
+$ docker exec -it webserver airflow connections add 'job_database' --conn-type 'postgres' --conn-login '' --conn-password '' --conn-host 'job_database' --conn-port '5432' --conn-schema ''
+```
 ### 開發手冊（for contribuer)
 - 歡迎所有人來參與開發，若有任何問題歡迎來信或是在 issue 提出
     - E-mail: zxc123benny14159@gmail.com
@@ -39,4 +45,4 @@ $ docker-compose up --build
     - https://hackmd.io/@nerohin/python-job-platform
 ---
 
-![](https://i.imgur.com/29V1E2p.png)![](https://i.imgur.com/29V1E2p.png)14140
+![](https://i.imgur.com/29V1E2p.png)

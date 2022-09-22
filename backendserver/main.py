@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from models.init_database import init_crawler
 from models.get_job_data import get_data
-from models.daily_job import daily_crawler
 
 app = FastAPI()
 
@@ -24,21 +22,6 @@ app.add_middleware(
 async def home():
     return {"message": "Hello World"}
 
-
-@app.get("/api/init")
-def init_db():
-    init = init_crawler()
-    init.init_database()
-
-    return {"message": "init_ok!"}
-
-
-@app.get('/api/daily')
-def daily():
-    daily = daily_crawler()
-    daily.crawl_daily()
-
-    return {"message": "daily_ok"}
 
 
 @app.get("/api/backend")

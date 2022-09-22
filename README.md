@@ -22,22 +22,26 @@
 * 創建 Discrod 頻道，若有新的求職資訊，並會進行推播
 * 優化網頁頁面，並架設 Nginx 優化網頁效能
 
-### 快速開始(架設自己的server)
-1. Clone the repository
+### 架設自己的server
+1. Clone the repo and go into the folder.
 ```
-$ git clone https://github.com/ChickenBenny/job-platform
-$ cd job-platform
+$ git clone https://github.com/ChickenBenny/job-platform.git
 ```
-2. Use docker-compose up to build the server
+2. Go to the `.env` file and type in the `user`,`password` and `schema`.
+3. Use docker compose build the frontend, backend and nginx.
 ```
-$ docker-compose up --build
+$ docker-compose up
 ```
-3. build the airflow server
+4. Go into the airflow foler and use docker compose build the airflow server
 ```
 $ cd airflow
 $ docker-compose up
-$ docker exec -it webserver airflow connections add 'job_database' --conn-type 'postgres' --conn-login '' --conn-password '' --conn-host 'job_database' --conn-port '5432' --conn-schema ''
 ```
+5. Build the connection with airflow server and job_database, and remember to change the db information.
+```
+$ docker exec -it webserver airflow connections add 'job_datanase' --conn-type 'postgres' --conn-login `${user}` --conn-password `${password}` --conn-host `{ip or host.docker.internal}` --conn-port '5432' --conn-schema ${schema}
+```
+
 ### 開發手冊（for contribuer)
 - 歡迎所有人來參與開發，若有任何問題歡迎來信或是在 issue 提出
     - E-mail: zxc123benny14159@gmail.com

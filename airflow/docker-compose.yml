@@ -1,0 +1,65 @@
+version: '3'
+x-common:
+  &common
+  build: ./python_package
+  user: "${AIRFLOW_UID:-50000}:0"
+  env_file: 
+    - .env
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    - /var/run/docker.sock:/var/run/docker.sock
+x-depends-on:
+  &depends-on
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    env_file:
+      - .env
+
+  scheduler:
+    <<: *common
+    <<: *depends-on
+    container_name: scheduler
+    command: scheduler
+    restart: on-failure
+    ports:
+      - "8793:8793"
+      
+  webserver:
+    <<: *common
+    <<: *depends-on
+    container_name: webserver
+    restart: always
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+
+  airflow-init:
+    <<: *common
+    container_name: airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /sources/logs /sources/dags /sources/plugins
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        exec /entrypoint airflow version

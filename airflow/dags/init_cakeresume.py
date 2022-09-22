@@ -6,7 +6,7 @@ from models.init_cake_pipline import init_cakeresume
 default_args = {
     'owner': 'Benny',
     'start_date': datetime(2022, 9, 22),
-    'schedule_interval': '@reboot',
+    'schedule_interval': '@once',
     'retries': 5,
     'retry_delay': timedelta(minutes = 2)    
 }

@@ -14,8 +14,15 @@ information = {
 def daily_job_yourator(type, table):
 
     @task
-    def get_data():
-        data = get_job_data(information[type])
+    def get_url():
+        url_datas = []
+        url = f'https://www.yourator.co/api/v2/jobs?category[]={information[type]}&tag[]=Python&sort=recent_updated'
+        url_datas.append(url)    
+        return {'content': url_datas}    
+
+    @task
+    def get_data(url_datas):
+        data = get_job_data(url_datas['content'])
         return {'content': data}
     
     @task
@@ -29,4 +36,4 @@ def daily_job_yourator(type, table):
     def insert_data(processed_data):
         insert_into_db(processed_data, table)
 
-    insert_data(process_data(get_data()))
+    insert_data(process_data(get_data(get_url())))

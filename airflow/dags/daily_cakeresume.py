@@ -5,7 +5,7 @@ from models.daily_cake_pipline import daily_job_cakeresume
 
 default_args = {
     'owner': 'Benny',
-    'start_date': datetime(2022, 9, 18),
+    'start_date': datetime(2022, 9, 22),
     'schedule_interval': '@daily',
     'retries': 5,
     'retry_delay': timedelta(minutes = 2)    

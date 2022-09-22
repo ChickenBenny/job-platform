@@ -4,7 +4,7 @@ from models.daily_yourator_pipline import daily_job_yourator
 
 default_args = {
     'owner': 'Benny',
-    'start_date': datetime(2022, 9, 18),
+    'start_date': datetime(2022, 9, 22),
     'schedule_interval': '@daily',
     'retries': 5,
     'retry_delay': timedelta(minutes = 2)    

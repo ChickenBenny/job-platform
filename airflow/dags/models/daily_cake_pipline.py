@@ -9,7 +9,7 @@ from models.insert_into_db import insert_into_db
 def daily_job_cakeresume(type, table):
     
     @task()
-    def get_soup():
+    def get_data():
         url = f'https://www.cakeresume.com/jobs/python?profession%5B0%5D=it_{type}&order=latest'
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -34,4 +34,4 @@ def daily_job_cakeresume(type, table):
     def insert_data(processed_data):
         insert_into_db(processed_data, table)
 
-    insert_data(process_data(get_soup()))
+    insert_data(process_data(get_data()))

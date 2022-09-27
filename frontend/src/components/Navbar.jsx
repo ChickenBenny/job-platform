@@ -6,6 +6,7 @@ import { navLinks } from "../constants";
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  console.log(active);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -47,7 +48,7 @@ const Navbar = () => {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a href={`${nav.id}`}>{nav.title}</a>
               </li>
             ))}
           </ul>

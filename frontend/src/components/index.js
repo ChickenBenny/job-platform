@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Business from "./Business";
 import Stats from "./Stats";
 import Footer from "./Footer";
-import Testimonials from "./Testimonials";
+import PgeBanner from "./PgeBanner";
 import Banner from "./Banner";
 
 export {
@@ -10,6 +10,6 @@ export {
   Business,
   Stats,
   Footer,
-  Testimonials,
+  PgeBanner,
   Banner
 };

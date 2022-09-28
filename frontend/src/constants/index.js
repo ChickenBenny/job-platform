@@ -1,4 +1,4 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { people01, people02, people03, facebook, linkedin, github, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
 export const navLinks = [
   {
@@ -19,7 +19,7 @@ export const navLinks = [
   },
   {
     id: "/ml_engineer",
-    title: "ml_engineer",
+    title: "ML engineer",
   },
   {
     id: "/qa_engineer",
@@ -31,52 +31,27 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Target",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "The best integraton platform for people who is finding python job.",
   },
   {
     id: "feature-2",
     icon: shield,
     title: "100% Secured",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "You dont need to register or give your personal information to surfing the webpage.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Cooperation",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "If you want to join our team feel free to contact me!",
   },
 ];
 
-export const feedback = [
-  {
-    id: "feedback-1",
-    content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
-    img: people01,
-  },
-  {
-    id: "feedback-2",
-    content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
-    img: people02,
-  },
-  {
-    id: "feedback-3",
-    content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader",
-    img: people03,
-  },
-];
+
 
 export const stats = [
   {
@@ -101,24 +76,24 @@ export const footerLinks = [
     title: "Useful Links",
     links: [
       {
-        name: "Content",
-        link: "https://www.hoobank.com/content/",
+        name: "Cakeresume",
+        link: "https://www.cakeresume.com/",
       },
       {
-        name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Yourator",
+        link: "https://www.yourator.co/",
       },
       {
-        name: "Create",
-        link: "https://www.hoobank.com/create/",
+        name: "Linkedin",
+        link: "https://www.linkedin.com/jobs/",
       },
       {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
+        name: "Meet.jobs",
+        link: "https://meet.jobs/zh-TW",
       },
       {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        name: "104",
+        link: "https://www.104.com.tw/jobs/main/",
       },
     ],
   },
@@ -126,24 +101,20 @@ export const footerLinks = [
     title: "Community",
     links: [
       {
-        name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        name: "Backend community",
+        link: "https://www.facebook.com/groups/616369245163622",
       },
       {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        name: "Devops Taiwan",
+        link: "https://www.facebook.com/DevOpsTaiwan",
       },
       {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
+        name: "Python Taiwan",
+        link: "https://www.facebook.com/groups/197223143437",
       },
       {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        name: "Tech job community",
+        link: "https://www.facebook.com/groups/800019214302525",
       },
     ],
   },
@@ -151,12 +122,8 @@ export const footerLinks = [
     title: "Partner",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "NCKU Buslab",
+        link: "",
       },
     ],
   },
@@ -165,41 +132,18 @@ export const footerLinks = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: instagram,
-    link: "https://www.instagram.com/",
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/jen-hung-hsiao-4259651b5/",
   },
   {
     id: "social-media-2",
     icon: facebook,
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/profile.php?id=100000226069203",
   },
   {
     id: "social-media-3",
-    icon: twitter,
-    link: "https://www.twitter.com/",
+    icon: github,
+    link: "https://github.com/ChickenBenny",
   },
-  {
-    id: "social-media-4",
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-];
 
-export const clients = [
-  {
-    id: "client-1",
-    logo: airbnb,
-  },
-  {
-    id: "client-2",
-    logo: binance,
-  },
-  {
-    id: "client-3",
-    logo: coinbase,
-  },
-  {
-    id: "client-4",
-    logo: dropbox,
-  },
 ];

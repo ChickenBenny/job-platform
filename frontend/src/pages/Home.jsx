@@ -1,5 +1,5 @@
 import styles from "../style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Banner } from "../components";
+import { Business, Footer, Navbar, Stats, Banner } from "../components";
 
 export const Home = () => {
     
@@ -21,11 +21,6 @@ export const Home = () => {
       <div className={`${styles.boxWidth}`}>
         <Stats />
         <Business />
-        <Billing />
-        <CardDeal />
-        <Testimonials />
-        <Clients />
-        <CTA />
         <Footer />
       </div>
     </div>

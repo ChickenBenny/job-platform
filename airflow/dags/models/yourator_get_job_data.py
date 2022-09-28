@@ -24,7 +24,12 @@ def get_job_data(url_datas):
             skill_set = []
             if len(tags) != 0:
                 for tag in tags:
-                    skill_set.append(tag['name'])
+                    if tag['name'] == 'MachineLearning':
+                        skill_set.append('機器學習')
+                    elif tag['name'] == 'DeepLearning':
+                        skill_set.append('深度學習')
+                    else:
+                        skill_set.append(tag['name'])
             else:
                 skill_set.append('None')
             tmp_data = [job_url, job_title, job_company,

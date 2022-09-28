@@ -47,7 +47,7 @@ export const features = [
     icon: send,
     title: "Cooperation",
     content:
-      "If you want to join our team feel free to contact me!",
+      "If you are interested in building this website and want to join our team feel free to contact me!",
   },
 ];
 

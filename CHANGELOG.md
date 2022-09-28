@@ -1,5 +1,10 @@
 # Change Log
 ### changed
+## 2022/9/28
+### Changed
+- frontend page styling
+- rwd
+
 ## 2022/9/22
 ### Add
 - airflow pipline dags

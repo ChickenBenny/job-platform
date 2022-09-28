@@ -1,6 +1,6 @@
 import styles from "../style";
 import { GetJob } from "../apis/GetJob"
-import { Footer, Navbar, PgeBanner } from "../components";
+import { Footer, Navbar, PageBanner } from "../components";
 import { JobBoard } from "../components/Jobboard";
 
 
@@ -17,7 +17,7 @@ export const DataEngineer = () => {
   
       <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <PgeBanner page={"Data Engineer"} />
+          <PageBanner page={"Data Engineer"} />
           <JobBoard data={jobItems} />
           <Footer />
         </div>

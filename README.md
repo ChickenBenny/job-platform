@@ -39,7 +39,7 @@ $ docker-compose up
 ```
 5. Build the connection with airflow server and job_database, and remember to change the db information.
 ```
-$ docker exec -it webserver airflow connections add 'job_datanase' --conn-type 'postgres' --conn-login `${user}` --conn-password `${password}` --conn-host `{ip or host.docker.internal}` --conn-port '5432' --conn-schema ${schema}
+$ docker exec -it webserver airflow connections add 'job_database' --conn-type 'postgres' --conn-login `${user}` --conn-password `${password}` --conn-host `{ip or host.docker.internal}` --conn-port '5432' --conn-schema ${schema}
 ```
 
 ### 開發手冊（for contribuer)

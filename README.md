@@ -46,7 +46,7 @@ $ docker exec -it webserver airflow connections add 'job_database' --conn-type '
 - 歡迎所有人來參與開發，若有任何問題歡迎來信或是在 issue 提出
     - E-mail: zxc123benny14159@gmail.com
 - 開發手冊
-    - TBD
+    - [Contributing Guidelines](CONTRIBUTING.md)
 ---
 
 ![](https://i.imgur.com/29V1E2p.png)

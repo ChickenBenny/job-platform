@@ -2,8 +2,6 @@
 ### Hunt for your Python Job
 這是一個針對 Python 語言所開發的整合求職平台，整合了 [Cakeresume](https://www.cakeresume.com) 和 [Yourator](https://www.yourator.co/) 等求職網站，並且每日會去各大求職網站爬取最新的資料，讓你找工作輕鬆自在，不必在各大平台流浪。
 
-**服務架設網址 :** https://chickenbenny.com
-
 ### 網站功能
 - [x] 跨平台整合求職資訊
 - [x] 建立爬蟲 pipeline，每日定期爬取資料
